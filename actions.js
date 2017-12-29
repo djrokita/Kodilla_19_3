@@ -9,36 +9,46 @@ const THUMB_DOWN_COMMENT = 'THUMB_DOWN_COMMENT';
 const addComment = (text) => {
 	return {
 		type: ADD_COMMENT,
-		text,
-		id: uuid.v4()
+		payload: {
+			text,
+			id: uuid.v4()
+		}
 	}
 }
 
 const editComment = (text, id) => {
 	return {
 		type: EDIT_COMMENT,
-		text,
-		id
+		payload: {
+			text,
+			id
+		}
 	}
 }
 
 const removeComment = (id) => {
 	return {
 		type: REMOVE_COMMENT,
-		id
+		payload: {
+			id
+		}
 	}
 }
 
 const getThumbUp = (id) => {
 	return {
 		type: THUMB_UP_COMMENT,
-		id
+		payload: {
+			id
+		}
 	}
 }
 
 const getThumbDown = (id) => {
 	return {
 		type: THUMB_DOWN_COMMENT,
-		id
+		payload: {
+			id
+		}
 	}
 }
