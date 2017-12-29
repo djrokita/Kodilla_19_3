@@ -1,46 +1,44 @@
 import uuid from uuid;
 
-const newComment = 'newComment';
-const editComment = 'editComment';
-const rmComment = 'rmComment';
-const upThumb = 'upThumb';
-const downThumb = 'downThumb';
+const ADD_COMMENT = 'ADD_COMMENT';
+const EDIT_COMMENT = 'EDIT_COMMENT';
+const REMOVE_COMMENT = 'REMOVE_COMMENT';
+const THUMB_UP_COMMENT = 'THUMB_UP_COMMENT';
+const THUMB_DOWN_COMMENT = 'THUMB_DOWN_COMMENT';
 
-const addNewComment = (text) => {
+const addComment = (text) => {
 	return {
-		type: newComment,
-		text: text,
+		type: ADD_COMMENT,
+		text,
 		id: uuid.v4()
 	}
-};
+}
 
-const makeEditComment = (text, id) => {
+const editComment = (text, id) => {
 	return {
-		type: editComment,
-		text: text,
-		id, id
+		type: EDIT_COMMENT,
+		text,
+		id
 	}
-};
+}
 
 const removeComment = (id) => {
 	return {
-		type: rmComment,
-		id: id
+		type: REMOVE_COMMENT,
+		id
 	}
-};
+}
 
 const getThumbUp = (id) => {
 	return {
-		type: upThumb,
-		id: id,
-		thumpUpCounter: thumpUpCounter + 1
+		type: THUMB_UP_COMMENT,
+		id
 	}
-};
+}
 
 const getThumbDown = (id) => {
 	return {
-		type: downThumb,
-		id: id,
-		thumpDownCounter: thumpDownCounter + 1
+		type: THUMB_DOWN_COMMENT,
+		id
 	}
-};
+}
